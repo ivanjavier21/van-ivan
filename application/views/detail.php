@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+	<title><?= $judul; ?></title>
+	<meta content="" name="description">
+	<meta content="" name="keywords">
+
+	<!-- Favicons -->
+	<link href="<?= base_url('assets/front/BizPage/'); ?>img/favicon.png" rel="icon">
+	<link href="<?= base_url('assets/front/BizPage/'); ?>img/apple-touch-icon.png" rel="apple-touch-icon">
+
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700"
+		rel="stylesheet">
+
+	<!-- Vendor CSS Files -->
+	<link href="<?= base_url('assets/front/BizPage/'); ?>assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+	<link href="<?= base_url('assets/front/BizPage/'); ?>assets/vendor/aos/aos.css" rel="stylesheet">
+	<link href="<?= base_url('assets/front/BizPage/'); ?>assets/vendor/bootstrap/css/bootstrap.min.css"
+		rel="stylesheet">
+	<link href="<?= base_url('assets/front/BizPage/'); ?>assets/vendor/bootstrap-icons/bootstrap-icons.css"
+		rel="stylesheet">
+	<link href="<?= base_url('assets/front/BizPage/'); ?>assets/vendor/glightbox/css/glightbox.min.css"
+		rel="stylesheet">
+	<link href="<?= base_url('assets/front/BizPage/'); ?>assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+	<!-- Template Main CSS File -->
+	<link href="<?= base_url('assets/front/BizPage/'); ?>assets/css/style.css" rel="stylesheet">
+
+	<!-- =======================================================
+  * Template Name: BizPage
+  * Updated: Jul 27 2023 with Bootstrap v5.3.1
+  * Template URL: https://bootstrapmade.com/bizpage-bootstrap-business-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+	<!-- ======= Header ======= -->
+	<header id="header" class="fixed-top d-flex align-items-center ">
+		<div class="container-fluid">
+
+			<div class="row justify-content-center align-items-center">
+				<div class="col-xl-11 d-flex align-items-center justify-content-between">
+					<h1 class="logo"><a href="<?= base_url(); ?>"><?= $konfig->judul_website; ?></a></h1>
+					<!-- Uncomment below if you prefer to use an image logo -->
+					<!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+					<nav id="navbar" class="navbar col-md-8">
+						<ul>
+							<li><a class="nav-link scrollto" href="<?= base_url() ?>">Home</a></li>
+							<?php foreach ($kategori as $kate){ ?>
+							<li><a class="nav-link scrollto"
+									href="<?= base_url('home/kategori/'.$kate['id_kategori']) ?>">
+									<?= $kate['nama_kategori'] ?>
+								</a></li>
+							<?php } ?>
+							</li>
+						</ul>
+						<a href="<?= base_url('auth') ?>" class="btn btn-primary px-4 ">Login</a>
+					</nav><!-- .navbar -->
+				</div>
+			</div>
+
+		</div>
+	</header>
+	<!-- End Header -->
+
+	<main id="main">
+
+		<!-- ======= Breadcrumbs ======= -->
+		<!-- End sidebar categories-->
+		<!-- End Breadcrumbs -->
+
+		<!-- ======= Blog Section ======= -->
+		<!-- ======= Blog Single Section ======= -->
+		<section id="blog" class="blog">
+			<div class="container" data-aos="fade-up">
+				<div class="row">
+					<div class="col-lg-8 entries">
+						<article class="entry entry-single">
+							<div class="entry-img">
+								<img src="assets/img/blog/blog-1.jpg" alt="" class="img-fluid">
+							</div>
+							<h2 class="entry-title">
+								<a href="blog-single.html"><?= $konten->judul; ?></a>
+							</h2>
+							<div class="entry-meta">
+								<img class="img-fluid rounded w-100 mb-4"
+									src="<?= base_url('assets/upload/konten/'.$konten->foto) ?>" />
+								<ul>
+									<li class="d-flex align-items-center"><i class="bi bi-person"></i> <a
+											href="blog-single.html"><?= $konten->nama; ?></a></li>
+									<li class="d-flex align-items-center"><i class="bi bi-person"></i> <a
+											href="blog-single.html"><?= $konten->nama_kategori; ?></a></li>
+								</ul>
+							</div>
+							<div class="entry-content">
+								<?= $konten->keterangan; ?>
+							</div>
+						</article><!-- End blog entry -->
+						<!-- End blog entries list -->
+
+					</div><!-- End sidebar recent posts-->
+
+				</div><!-- End sidebar tags-->
+
+			</div><!-- End sidebar -->
+
+			</div><!-- End blog sidebar -->
+
+			</div>
+
+			</div>
+		</section><!-- End Blog Section -->
+
+	</main><!-- End #main -->
+
+	<!-- ======= Footer ======= -->
+	<footer id="footer">
+		<div class="footer-top">
+			<div class="container">
+				<div class="row">
+
+					<div class="col-lg-3 col-md-6 footer-info">
+						<h3><?= $konfig->judul_website; ?></h3>
+						<p><?= $konfig->profil_website; ?></p>
+					</div>
+
+					<div class="col-lg-3 col-md-6 footer-links">
+						<h4>Useful Links</h4>
+						<ul>
+							<li><i class="bi bi-chevron-right"></i> <a href="<?= base_url() ?>">Home</a></li>
+							<?php foreach ($kategori as $kate){ ?>
+							<li>
+								<i class="bi bi-chevron-right"></i> <a
+									href="<?= base_url('home/kategori/'.$kate['id_kategori']) ?>">
+									<!-- <i class="bi bi-chevron-right"></i> -->
+									<?= $kate['nama_kategori'] ?>
+								</a>
+							</li>
+							<?php } ?>
+						</ul>
+					</div>
+
+					<div class="col-lg-3 col-md-6 footer-contact">
+						<h4>Contact Us</h4>
+						<p>
+							<strong>Alamat: <br> </strong><?= $konfig->alamat; ?><br>
+							<strong>Phone: <br> </strong><?= $konfig->no_wa; ?><br>
+							<strong>Email: <br> </strong><?= $konfig->email; ?><br>
+						</p>
+
+						<div class="social-links">
+							<a href="<?= $konfig->facebook; ?>" class="facebook"><i class="bi bi-facebook"></i></a>
+							<a href="<?= $konfig->instagram; ?>" class="instagram"><i class="bi bi-instagram"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="copyright">
+				&copy; Copyright <strong><?= $konfig->judul_website; ?></strong>. All Rights Reserved
+			</div>
+			<div class="credits">
+				<!--
+        All the links in the footer should remain intact.
+        You can delete the links only if you purchased the pro version.
+        Licensing information: https://bootstrapmade.com/license/
+        Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=BizPage
+      -->
+				Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+			</div>
+		</div>
+	</footer><!-- End Footer -->
+
+	<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+			class="bi bi-arrow-up-short"></i></a>
+	<!-- Uncomment below i you want to use a preloader -->
+	<!-- <div id="preloader"></div> -->
+
+	<!-- Vendor JS Files -->
+	<script src="<?= base_url('assets/front/BizPage/'); ?>assets/vendor/purecounter/purecounter_vanilla.js"></script>
+	<script src="<?= base_url('assets/front/BizPage/'); ?>assets/vendor/aos/aos.js"></script>
+	<script src="<?= base_url('assets/front/BizPage/'); ?>assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="<?= base_url('assets/front/BizPage/'); ?>assets/vendor/glightbox/js/glightbox.min.js"></script>
+	<script src="<?= base_url('assets/front/BizPage/'); ?>assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+	<script src="<?= base_url('assets/front/BizPage/'); ?>assets/vendor/swiper/swiper-bundle.min.js"></script>
+	<script src="<?= base_url('assets/front/BizPage/'); ?>assets/vendor/waypoints/noframework.waypoints.js"></script>
+	<script src="<?= base_url('assets/front/BizPage/'); ?>assets/vendor/php-email-form/validate.js"></script>
+
+
+	<!-- Template Main JS File -->
+	<script src="<?= base_url('assets/front/BizPage/'); ?>assets/js/main.js"></script>
+
+</body>
+
+</html>
